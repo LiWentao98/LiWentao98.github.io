@@ -7,17 +7,17 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="char类型 在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理字符串（String）（StringBuffer和StringBuilder待添加） Java的字符串就是Unicode字符序列，Java没有内置的字符串类型，而是在标准Java库中提供了一个预定义类，叫做“String”，它的实例用双引号括">
+  <meta name="description" content="title：Java——char类型和字符串char类型 在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理字符串（String）（StringBuffer和StringBuilder待添加） Java的字符串就是Unicode字符序列，Java没有内置的字符串类型，而是在标准Java库中提供了一个预定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2019/03/28/Java——char类型和字符串/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="char类型 在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理字符串（String）（StringBuffer和StringBuilder待添加） Java的字符串就是Unicode字符序列，Java没有内置的字符串类型，而是在标准Java库中提供了一个预定义类，叫做“String”，它的实例用双引号括">
+<meta property="og:description" content="title：Java——char类型和字符串char类型 在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理字符串（String）（StringBuffer和StringBuilder待添加） Java的字符串就是Unicode字符序列，Java没有内置的字符串类型，而是在标准Java库中提供了一个预定">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-28T15:19:35.200Z">
+<meta property="og:updated_time" content="2019-03-28T15:44:28.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="char类型 在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理字符串（String）（StringBuffer和StringBuilder待添加） Java的字符串就是Unicode字符序列，Java没有内置的字符串类型，而是在标准Java库中提供了一个预定义类，叫做“String”，它的实例用双引号括">
+<meta name="twitter:description" content="title：Java——char类型和字符串char类型 在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理字符串（String）（StringBuffer和StringBuilder待添加） Java的字符串就是Unicode字符序列，Java没有内置的字符串类型，而是在标准Java库中提供了一个预定">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -76,37 +76,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="char类型"><a href="#char类型" class="headerlink" title="char类型"></a><strong>char类型</strong></h4><ul>
+        <hr>
+<h2 id="title：Java——char类型和字符串"><a href="#title：Java——char类型和字符串" class="headerlink" title="title：Java——char类型和字符串"></a>title：Java——char类型和字符串</h2><h4 id="char类型"><a href="#char类型" class="headerlink" title="char类型"></a><strong>char类型</strong></h4><ul>
 <li>在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理<h4 id="字符串（String）（StringBuffer和StringBuilder待添加）"><a href="#字符串（String）（StringBuffer和StringBuilder待添加）" class="headerlink" title="字符串（String）（StringBuffer和StringBuilder待添加）"></a><strong>字符串（String）</strong>（StringBuffer和StringBuilder待添加）</h4></li>
 <li>Java的字符串就是Unicode字符序列，Java没有内置的字符串类型，而是在标准Java库中提供了一个预定义类，叫做“String”，它的实例用双引号括起来<br>例如</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String e = <span class="string">" "</span>;  <span class="comment">//一个空字符串</span></span><br><span class="line">String greeting = <span class="string">"Hello"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String e = &quot; &quot;;  //一个空字符串</span><br><span class="line">String greeting = &quot;Hello&quot;;</span><br></pre></td></tr></table></figure>
 <h6 id="String-中常见的方法"><a href="#String-中常见的方法" class="headerlink" title="String 中常见的方法"></a>String 中常见的方法</h6><ul>
 <li><strong>substring（）</strong><br>作用：从较大的字符串中提取一个子串<br>例如：</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String greeting = <span class="string">"Hello"</span>;</span><br><span class="line">String s = greeting.substring(<span class="number">0</span>,<span class="number">3</span>);  <span class="comment">//调用该方法之后，s="Hel",只会抽取位置为3之前的，即（0，1,2）（不包括位置为3）的，其长度也非常好计算，len=3-0=3.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String greeting = &quot;Hello&quot;;</span><br><span class="line">String s = greeting.substring(0,3);  //调用该方法之后，s=&quot;Hel&quot;,只会抽取位置为3之前的，即（0，1,2）（不包括位置为3）的，其长度也非常好计算，len=3-0=3.</span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>“+”拼接</strong><br>Java语言允许使用“+”连接两个字符串，需要注意的是，如果是将字符串和非字符串进行连接，后者则会被转换为字符串（在Java中，任何一个字符串都可以转换成字符串）<br>例如：</li>
 </ul>
-<blockquote>
-<p>例子1.普通拼接<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String expletive = <span class="string">"Expletive"</span>;</span><br><span class="line">String PGL3 = <span class="string">"deleted"</span>;</span><br><span class="line">String message = expletive + PGL3； <span class="comment">//message = Expletivedeleted</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>例子2.字符串与其他类型的拼接</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">13</span>;</span><br><span class="line">String name = <span class="string">"name"</span> + a;</span><br><span class="line"><span class="comment">//结果为"name13"</span></span><br></pre></td></tr></table></figure>
-<p>例2的特性则被运用到输出语句中，我们经常用到的</p>
+<p>例子1.普通拼接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String expletive = &quot;Expletive&quot;;</span><br><span class="line">String PGL3 = &quot;deleted&quot;;</span><br><span class="line">String message = expletive + PGL3； //message = Expletivedeleted</span><br></pre></td></tr></table></figure></p>
+<p>例子2.字符串与其他类型的拼接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a = 13;</span><br><span class="line">String name = &quot;name&quot; + a;</span><br><span class="line">//结果为&quot;name13&quot;</span><br></pre></td></tr></table></figure></p>
+<p>例2的特性则被运用到输出语句中，我们经常用到的。</p>
 <ul>
-<li><p><strong>equals（）</strong><br>作用： 可以用来检测两个字符串是否相等（内容），例如表达式：</p>
-<blockquote>
-<p>s.equal(t)</p>
-</blockquote>
+<li><p><strong>equals（）</strong><br>作用： 可以用来检测两个字符串是否相等（内容），例如表达式：<br><code>s.equal(t)</code></p>
 <p>如果字符串s与字符串t相等，则返回true，否则返回false。<br><strong>注意</strong>：不要使用==检测两个字符串是否相等，该运算符只能检测两个字符串是否放在同一个位置上</p>
 </li>
 <li><p><strong>length（）</strong><br>作用：返回该字符串的长度</p>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String greeting = <span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">int</span> n = greeting.length();  <span class="comment">//长度为5</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String greeting = &quot;Hello&quot;;</span><br><span class="line">int n = greeting.length();  //长度为5</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>像String.charAt(int index),可以返回该位置的代码单元，String有很多有用的方法，想要了解更多请查看API</p>
 </blockquote>
@@ -114,7 +107,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/Java——char类型和字符串/" data-id="cjtssr5tt00012czud741idlp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/Java——char类型和字符串/" data-id="cjtst79ur0000sozumlt00kh3" class="article-share-link">Share</a>
       
       
     </footer>
