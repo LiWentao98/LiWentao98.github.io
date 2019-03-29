@@ -29,7 +29,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -406,16 +406,29 @@
 <li>在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理<h4 id="字符串（String）（StringBuffer和StringBuilder待添加）"><a href="#字符串（String）（StringBuffer和StringBuilder待添加）" class="headerlink" title="字符串（String）（StringBuffer和StringBuilder待添加）"></a><strong>字符串（String）</strong>（StringBuffer和StringBuilder待添加）</h4></li>
 <li>Java的字符串就是Unicode字符序列，Java没有内置的字符串类型，而是在标准Java库中提供了一个预定义类，叫做“String”，它的实例用双引号括起来<br>例如</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[String e = <span class="string">" "</span>];</span><br><span class="line">[String greeting = <span class="string">"Hello"</span>];</span><br></pre></td></tr></table></figure>
+<pre><code>[String e = &quot; &quot;];
+[String greeting = &quot;Hello&quot;];</code></pre>
 <h6 id="String-中常见的方法"><a href="#String-中常见的方法" class="headerlink" title="String 中常见的方法"></a>String 中常见的方法</h6><ul>
 <li><strong>substring（）</strong><br>作用：从较大的字符串中提取一个子串<br>例如：</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String greeting = <span class="string">"Hello"</span>;</span><br><span class="line">String s = greeting.substring(<span class="number">0</span>,<span class="number">3</span>);  <span class="comment">//调用该方法之后，</span></span><br><span class="line">s=<span class="string">"Hel"</span>,只会抽取位置为<span class="number">3</span>之前的，即（<span class="number">0</span>，<span class="number">1</span>,<span class="number">2</span>）（不包括位置为<span class="number">3</span>）</span><br><span class="line">的，其长度也非常好计算，len=<span class="number">3</span>-<span class="number">0</span>=<span class="number">3</span>.</span><br></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">String greeting <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>
+String s <span class="token operator">=</span> greeting<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//调用该方法之后，</span>
+s<span class="token operator">=</span><span class="token string">"Hel"</span><span class="token punctuation">,</span>只会抽取位置为<span class="token number">3</span>之前的，即（<span class="token number">0</span>，<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span>）（不包括位置为<span class="token number">3</span>）
+的，其长度也非常好计算，len<span class="token operator">=</span><span class="token number">3</span><span class="token operator">-</span><span class="token number">0</span><span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">.</span>
+</code></pre>
 <ul>
 <li><strong>“+”拼接</strong><br>Java语言允许使用“+”连接两个字符串，需要注意的是，如果是将字符串和非字符串进行连接，后者则会被转换为字符串（在Java中，任何一个字符串都可以转换成字符串）<br>例如：</li>
 </ul>
-<p>例子1.普通拼接<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String expletive = <span class="string">"Expletive"</span>;</span><br><span class="line">String PGL3 = <span class="string">"deleted"</span>;</span><br><span class="line">String message = expletive + PGL3； <span class="comment">//message = Expletivedeleted</span></span><br></pre></td></tr></table></figure></p>
-<p>例子2.字符串与其他类型的拼接<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">13</span>;</span><br><span class="line">String name = <span class="string">"name"</span> + a;</span><br><span class="line"><span class="comment">//结果为"name13"</span></span><br></pre></td></tr></table></figure></p>
+<p>例子1.普通拼接</p>
+<pre class=" language-java"><code class="language-java">String expletive <span class="token operator">=</span> <span class="token string">"Expletive"</span><span class="token punctuation">;</span>
+String PGL3 <span class="token operator">=</span> <span class="token string">"deleted"</span><span class="token punctuation">;</span>
+String message <span class="token operator">=</span> expletive <span class="token operator">+</span> PGL3； <span class="token comment" spellcheck="true">//message = Expletivedeleted</span>
+</code></pre>
+<p>例子2.字符串与其他类型的拼接</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">13</span><span class="token punctuation">;</span>
+String name <span class="token operator">=</span> <span class="token string">"name"</span> <span class="token operator">+</span> a<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//结果为"name13"</span>
+</code></pre>
 <p>例2的特性则被运用到输出语句中，我们经常用到的。</p>
 <ul>
 <li><p><strong>equals（）</strong><br>作用： 可以用来检测两个字符串是否相等（内容），例如表达式：<br><code>s.equal(t)</code></p>
@@ -424,7 +437,9 @@
 <li><p><strong>length（）</strong><br>作用：返回该字符串的长度</p>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String greeting = <span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">int</span> n = greeting.length();  <span class="comment">//长度为5</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-java"><code class="language-java">String greeting <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> n <span class="token operator">=</span> greeting<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//长度为5</span>
+</code></pre>
 <blockquote>
 <p>像String.charAt(int index),可以返回该位置的代码单元，String有很多有用的方法，想要了解更多请查看API</p>
 </blockquote>
