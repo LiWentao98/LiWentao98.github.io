@@ -4,9 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java——char类型和字符串, Hexo">
-    <meta name="description" content="char类型
-在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理字符串（String）（StringBuffer和StringBuilder待添加">
+    <meta name="keywords" content="Hexo">
+    <meta name="description" content="抽象类
+为什么要有抽象类？
+
+我曾经也想过为什么要有抽象类，普通的类和子类不就能够完成任务了吗，但是后来明白，父类里面的方法实现很多都没有用，都在子类里面重写了，那父类里面的代码岂不是冗余了。反过来思考，抽象类把一些具有相同属性和方法的组件">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java——char类型和字符串 | Hexo</title>
+    <title>Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java——char类型和字符串
+                        
                     </div>
                 </div>
             </div>
@@ -386,7 +388,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-28
+                    2019-03-29
                 </div>
 
                 
@@ -402,47 +404,148 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="char类型"><a href="#char类型" class="headerlink" title="char类型"></a><strong>char类型</strong></h4><ul>
-<li>在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理<h4 id="字符串（String）（StringBuffer和StringBuilder待添加）"><a href="#字符串（String）（StringBuffer和StringBuilder待添加）" class="headerlink" title="字符串（String）（StringBuffer和StringBuilder待添加）"></a><strong>字符串（String）</strong>（StringBuffer和StringBuilder待添加）</h4></li>
-<li>Java的字符串就是Unicode字符序列，Java没有内置的字符串类型，而是在标准Java库中提供了一个预定义类，叫做“String”，它的实例用双引号括起来<br>例如</li>
-</ul>
-<p><code>String e = &quot; &quot;;
-String greeting = &quot;Hello&quot;;</code></p>
-<h6 id="String-中常见的方法"><a href="#String-中常见的方法" class="headerlink" title="String 中常见的方法"></a>String 中常见的方法</h6><ul>
-<li><strong>substring（）</strong><br>作用：从较大的字符串中提取一个子串<br>例如：</li>
-</ul>
-<pre class=" language-java"><code class="language-java">String greeting <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>
-String s <span class="token operator">=</span> greeting<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//调用该方法之后，</span>
-s<span class="token operator">=</span><span class="token string">"Hel"</span><span class="token punctuation">,</span>只会抽取位置为<span class="token number">3</span>之前的，即（<span class="token number">0</span>，<span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span>）（不包括位置为<span class="token number">3</span>）
-的，其长度也非常好计算，len<span class="token operator">=</span><span class="token number">3</span><span class="token operator">-</span><span class="token number">0</span><span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">.</span>
-</code></pre>
-<ul>
-<li><strong>“+”拼接</strong><br>Java语言允许使用“+”连接两个字符串，需要注意的是，如果是将字符串和非字符串进行连接，后者则会被转换为字符串（在Java中，任何一个字符串都可以转换成字符串）<br>例如：</li>
-</ul>
-<p>例子1.普通拼接</p>
-<pre class=" language-java"><code class="language-java">String expletive <span class="token operator">=</span> <span class="token string">"Expletive"</span><span class="token punctuation">;</span>
-String PGL3 <span class="token operator">=</span> <span class="token string">"deleted"</span><span class="token punctuation">;</span>
-String message <span class="token operator">=</span> expletive <span class="token operator">+</span> PGL3； <span class="token comment" spellcheck="true">//message = Expletivedeleted</span>
-</code></pre>
-<p>例子2.字符串与其他类型的拼接</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">13</span><span class="token punctuation">;</span>
-String name <span class="token operator">=</span> <span class="token string">"name"</span> <span class="token operator">+</span> a<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//结果为"name13"</span>
-</code></pre>
-<p>例2的特性则被运用到输出语句中，我们经常用到的。</p>
-<ul>
-<li><p><strong>equals（）</strong><br>作用： 可以用来检测两个字符串是否相等（内容），例如表达式：<br><code>s.equal(t)</code></p>
-<p>如果字符串s与字符串t相等，则返回true，否则返回false。<br><strong>注意</strong>：不要使用==检测两个字符串是否相等，该运算符只能检测两个字符串是否放在同一个位置上</p>
-</li>
-<li><p><strong>length（）</strong><br>作用：返回该字符串的长度</p>
-</li>
-</ul>
-<pre class=" language-java"><code class="language-java">String greeting <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> n <span class="token operator">=</span> greeting<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//长度为5</span>
-</code></pre>
-<blockquote>
-<p>像String.charAt(int index),可以返回该位置的代码单元，String有很多有用的方法，想要了解更多请查看API</p>
+                <h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><blockquote>
+<p>为什么要有抽象类？</p>
 </blockquote>
+<p>我曾经也想过为什么要有抽象类，普通的类和子类不就能够完成任务了吗，但是后来明白，父类里面的方法实现很多都没有用，都在子类里面重写了，那父类里面的代码岂不是冗余了。<br>反过来思考，抽象类把一些具有相同属性和方法的组件进行抽象，这样更有利于代码和程序的维护。<br>规矩点说就是：<strong>抽象类为所有子类提供了一个通用模板，子类可以在这个模板基础上进行扩展。通过抽象类，可以避免子类设计的随意性；通过抽象类，我们就可以做到严格限制子类的设计，使子类之间更加通用。</strong></p>
+<ul>
+<li><strong>关键字：abstract</strong><br>例如以下的形式<pre><code>public abstract class Person
+{
+}
+</code></pre><blockquote>
+<p>抽象类具有以下特点</p>
+</blockquote>
+</li>
+<li>抽象方法只有声明，没有定义体，只能被继承</li>
+<li>包含了抽象方法的类一定是抽象类</li>
+<li>抽象类也可以有普通方法，可以没有抽象方法</li>
+<li>抽象类不能被实例化</li>
+<li>它的子类要么写为抽象类，要么实现抽象类中所有的抽象方法</li>
+<li>它可以有属性，方法，构造器（构造器不能是抽象）</li>
+</ul>
+<p>有如下简单的例子</p>
+<pre><code>/**
+ * 抽象类测试
+ *
+ */
+public abstract class Animal {  //抽象类
+    String str;
+
+    public Animal() { //抽象类可以有构造器
+        System.out.println(&quot;创建一个动物&quot;);
+    }
+
+    public abstract void run();   //抽象方法不能有方法体
+
+    public void breath() {  //一般方法
+        System.out.println(&quot;呼吸&quot;);
+        run();
+    }
+}
+
+/*子类*/
+class Cat extends Animal{  
+    public Cat(){
+        System.out.println(&quot;创建一只猫&quot;);
+    }
+
+    @Override
+    public void run(){
+        System.out.println(&quot;猫步小跑&quot;);
+    }
+}
+
+class Dog extends Animal{
+    @Override
+    public  void run(){
+        System.out.println(&quot;快步跑&quot;);
+    }
+}
+
+/*测试*/
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Cat();   //new后边不能是抽象类，但可以作为一个类型
+        a.breath();  //对象类的方法优先级大于父类
+        a.run();
+    }
+}
+
+输出结果：
+创建一个动物
+创建一只猫
+呼吸
+猫步小跑
+猫步小跑
+</code></pre><h3 id="接口（interface）"><a href="#接口（interface）" class="headerlink" title="接口（interface）"></a>接口（interface）</h3><ul>
+<li>简单明了地说一下接口，就是比抽象类还抽象的类</li>
+<li><strong>注意：接口里面的方法声明时可以不用加public，因为它是多余的； java中接口的方法默认是 public  abstract</strong></li>
+<li><strong>关键字：interface，替代class，但编译时生成的还是class文件</strong></li>
+</ul>
+<h6 id="接口的特点"><a href="#接口的特点" class="headerlink" title="接口的特点"></a>接口的特点</h6><ul>
+<li>不能有非抽象的方法</li>
+<li>接口不能有构造器</li>
+<li>接口默认声明为public，不能加其他的</li>
+<li>接口不能运行，没有main</li>
+<li>接口可以集成一个或多个其他接口</li>
+<li>接口速度比抽象类慢，因为需要时间去寻找在类中实现的方法</li>
+<li>往接口中添加新方法时，必须改变实现该接口的类（该类必须实现接口中所有的抽象方法）</li>
+<li>一个类可以实现多个接口</li>
+<li>接口支持多继承</li>
+<li><strong>实现接口的关键字：implements</strong></li>
+</ul>
+<p>有如下例子：</p>
+<pre><code>interface Flyable {  //接口1
+    int MAX_SPEED = 11000;
+    int MIN_HEIGHT = 1;
+    void fly();
+}
+
+interface Attack{  //接口2
+    void attack();
+}
+
+class Plane implements Flyable{  //继承接口1
+    @Override
+    public void fly() {  //实现抽象方法，下同
+        System.out.println(&quot;飞机依靠发动机在飞&quot;);
+    }
+}
+
+class Man implements Flyable{  //继承接口1
+    @Override
+    public void fly() {
+        System.out.println(&quot;跳起来，飞&quot;);
+    }
+}
+
+class Stone implements Flyable,Attack{  //多继承，继承接口1,2
+    @Override
+    public void fly() {
+        System.out.println(&quot;被人扔出去，飞&quot;);
+    }
+
+    @Override
+    public void attack() {
+        System.out.println(&quot;石头，攻击&quot;);
+    }
+
+
+/*测试*/
+public  class Test {
+    public static void main(String[] args) {
+        Flyable  f = new Stone();  //虽然接口1Flyable不能被实现，但仍可以做对象f的类型
+                                   //构造属于子类Stone的对象f
+        f.fly();  //此处直接调用的是Stone中的fly（）
+    }
+}
+
+运行结果：
+被人扔出去，飞
+</code></pre><blockquote>
+<p>以下为这两者的只管对比图，对比很明显</p>
+</blockquote>
+<p><img src="http://m.qpic.cn/psb?/V140FvSN1p6ORd/X06UU82QyqMZCuGAA.y0QUMrr..7PL0yMM*bD*joSd8!/b/dDIBAAAAAAAA&amp;bo=DgO4AgAAAAADB5U!&amp;rf=viewer_4" alt="对比图"></p>
 
             </div>
             <hr>
@@ -590,7 +693,7 @@ String name <span class="token operator">=</span> <span class="token string">"na
                     </span>
                     <a href="http://yoursite.com" class="b-link-green">Hexo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/28/Java——char类型和字符串/" class="b-link-green">Java——char类型和字符串</a>
+                    <a href="/2019/03/29/浅谈抽象类和接口/" class="b-link-green"></a>
                 </p>
             </div>
         </div>
@@ -613,7 +716,8 @@ String name <span class="token operator">=</span> <span class="token string">"na
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/03/29/浅谈抽象类和接口/">
                     <div class="card-image">
@@ -630,9 +734,9 @@ String name <span class="token operator">=</span> <span class="token string">"na
 
 我曾经也想过为什么要有抽象类，普通的类和子类不就能够完成任务了吗，但是后来明白，父类里面的方法实现很多都没有用，都在子类里面重写了，那父类里面的代码岂不是冗余了。反过来思考，抽象类把一些具有相同属性和方法的组件</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -641,6 +745,7 @@ String name <span class="token operator">=</span> <span class="token string">"na
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -651,20 +756,21 @@ String name <span class="token operator">=</span> <span class="token string">"na
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/23/hello-world/">
+                <a href="/2019/03/28/Java——char类型和字符串/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Java——char类型和字符串">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Java——char类型和字符串</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">char类型
+在Java中char（2个字节）类型描述了UTF-16编码中的一个代码单元，除非确实要处理UTF-16代码单元，最好将字符串作为抽象数据类型处理字符串（String）（StringBuffer和StringBuilder待添加</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-28
                             </span>
                         <span class="publish-author">
                             
